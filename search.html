@@ -1,73 +1,135 @@
 <!DOCTYPE>
 <head>
-	<title> Test </title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-	
-	<style>
-	#outer-container{
-		border: solid;
-		height: 600px;
-		width: 800px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#inner-container{
-		position: relative;
-		width: 70%;
-		height: 70%;
-		border: solid;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	#inner-header{
-		background-color: grey;
-		border-bottom: solid;
-	}
-
-	.input{
-		border-radius: 10px;
-	}
+  	<title> Search form </title>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  	<style>
+/*	#outer-container{
+  		border: solid;
+  		height: 600px;
+  		width: 800px;
+  		margin-left: auto;
+  		margin-right: auto;
+  	}
+  	#inner-container{
+  		position: relative;
+  		width: 70%;
+  		height: 70%;
+  		border: solid;
+  		margin-left: auto;
+  		margin-right: auto;
+  	}
+  	#inner-header{
+  		background-color: grey;
+  		border-bottom: solid;
+  	}
+  	.input{
+  		border-radius: 10px;
+  	}
 
 	.button{
 		border-radius: 10px;
 	}
 
+*/
+	  #LinkedIn_container {
+		height: 300px;
+	    width: 500px;
+	    border: 1px solid white;
+	    box-shadow: 0 1px 5px grey;
+	    border-radius: 10px;	    
+	    margin: auto;
+	  }
+
+	  #LinkedIn_container header {
+	    padding: 10px 30px; 
+	    box-shadow: 0 1px 2px grey;
+
+	    /*Linear gradient taken from internet*/
+	    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );
+	    
+	    
+	  }
+
+	  #LinkedIn_container section {
+	    padding: 10px 30px; 
+	    font-size: 12px;
+
+	  }	
+
+	  #LinkedIn_container h1 {
+	    text-shadow: 0 1px 2px white;
+	    color: #888;
+	    text-align: left;
+	    margin-top: 5px;
+	    font-weight: normal;
+	  }
+
+	  #LinkedIn_container form input{
+	   	margin-top: 3px;
+	  }		  
 
 	</style>
 </head>
-
 <body>
+	<div id="LinkedIn_container">
+		<header> <h3> Search Results <h3></header>
+		<section> 
+			<form>
+				<h1>The interview asked to call a GET request and fill the results with the response</h1>
+				<input type="text" id="linkedin" name="inputbox" placeholder="Enter search here" value="">
+				<input type="button" name="button" value="Search" onclick="fillForm(value)">
+			</form>
+		</section>
+	</div>
+
+
+	<script type="text/javascript">
+
+		function fillForm(value){
+			if ($('#linkedin').val() == ""){
+				document.getElementById("result").innerHTML = "Theres nothing here!"
+			}
+			else{
+				document.getElementById("result").innerHTML = $('#linkedin').val()
+			}
+
+			$('#linkedin').val("")
+
+		}	
+	</script>
+
+	<div id="result" style="text-align: center;">
+		<p id="insert"> Dummy Text here </p>
+	</div>
+
+
+
+
+
+<!-- 
 	<div id="outer-container"> 
 		<div id="inner-container"> 
 			<div id="inner-header">
 				<h2> Search Results </h2>
 			</div>
 			<div id="inner-body">
-				<p>Search results here</p>
-				<form class="search">
-					<input type="text" placeholder="Type in search here"> <button type="submit"> Search </button>
-				</form>
-			</div>
-		</div>
-	</div>
-	
+				<form>
+					<p>Search results here</p>
+					<input type="text" id="linkedin" name="inputbox" placeholder="Enter search here" value="">
+					<input type="button" name="button" value="Search" onclick="fillForm(value)">
 
+				</form> -->
 
+    				<!-- Hidden form -->
+<!--				<form action="/search" method='get' class="search" style="visibility: hidden;">
+    					<input type="text" placeholder="Type in search here"> <button onclick="fillForm('red')"> Search </button>
+    				</form>
+ -->				<!-- Hidden form -->
+    			<!-- </div> -->
+    		<!-- </div> -->
+    	<!-- </div> -->
 
-
-	<div id="result" style="text-align: center;">
-		<p> (insert result here)</p>
-	</div>
-
-
-
-	<script>
-	function fillForm(){
-		document.getElementById('result'){
-
-		}
-	})
-	</script>
 </body>
