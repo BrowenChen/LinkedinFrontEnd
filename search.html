@@ -1,36 +1,8 @@
 <!DOCTYPE>
 <head>
-  	<title> Search form </title>
-  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  	<style>
-/*	#outer-container{
-  		border: solid;
-  		height: 600px;
-  		width: 800px;
-  		margin-left: auto;
-  		margin-right: auto;
-  	}
-  	#inner-container{
-  		position: relative;
-  		width: 70%;
-  		height: 70%;
-  		border: solid;
-  		margin-left: auto;
-  		margin-right: auto;
-  	}
-  	#inner-header{
-  		background-color: grey;
-  		border-bottom: solid;
-  	}
-  	.input{
-  		border-radius: 10px;
-  	}
-
-	.button{
-		border-radius: 10px;
-	}
-
-*/
+	<title> Search form </title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<style>
 	  #LinkedIn_container {
 		height: 300px;
 	    width: 500px;
@@ -39,7 +11,6 @@
 	    border-radius: 10px;	    
 	    margin: auto;
 	  }
-
 	  #LinkedIn_container header {
 	    padding: 10px 30px; 
 	    box-shadow: 0 1px 2px grey;
@@ -48,62 +19,85 @@
 	    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
 	    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
 	    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
-	    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );
-	    
-	    
+	    background-image: -o-linear-gradient( top, #f1f1f1, #CCC ); 
 	  }
-
 	  #LinkedIn_container section {
 	    padding: 10px 30px; 
 	    font-size: 12px;
-
 	  }	
-
-	  #LinkedIn_container h1 {
+	  #LinkedIn_container h3 {
 	    text-shadow: 0 1px 2px white;
 	    color: #888;
 	    text-align: left;
 	    margin-top: 5px;
 	    font-weight: normal;
 	  }
-
-	  #LinkedIn_container form input{
+	  #LinkedIn_container form input p {
+	   	text-shadow: 0 1px 2px white;
 	   	margin-top: 3px;
+	   	color: #888;
+	   	font-weight: normal;
 	  }		  
 
+	  #click:hover{
+		color: blue;
+	  }
 	</style>
 </head>
 <body>
 	<div id="LinkedIn_container">
-		<header> <h3> Search Results <h3></header>
+		<header> <h2> Search <h2></header>
 		<section> 
 			<form>
-				<h1>The interview asked to call a GET request and fill the results with the response</h1>
+				<h3>The interview asked to call a GET request and fill the results with the response</h3>
+				<h3> I'll do a variation and just populate the results with whatever input is submitted in the search box.</h3>
+
 				<input type="text" id="linkedin" name="inputbox" placeholder="Enter search here" value="">
-				<input type="button" name="button" value="Search" onclick="fillForm(value)">
+				<input type="button" name="button" value="Click to Add" onclick="fillForm(value)">
+			</form>
+
+			<h3 id="click">Click here to see how I'd implement a GET request</h3>
+	</div>
+
+	<br>
+
+	<div id="LinkedIn_container">
+		<header> <h2> Results <h2></header>
+		<section> 
+			<form>
+				<div id="result" style="text-align: center;">
+					<ul>
+						<h3 id="insert"> Go search for something up there </h3>
+					</ul>
+				</div>
 			</form>
 		</section>
 	</div>
 
-
 	<script type="text/javascript">
+		function populateStuff(){
 
+			var result = ""
+			for (var i = 0; i < this.object.length; i++){
+				result += "<li>" + this.object[i] + "</li>"
+			}
+			return result
+		}
 		function fillForm(value){
-			if ($('#linkedin').val() == ""){
-				document.getElementById("result").innerHTML = "Theres nothing here!"
-			}
-			else{
-				document.getElementById("result").innerHTML = $('#linkedin').val()
-			}
-
-			$('#linkedin').val("")
-
+		 	if ($('#linkedin').val() == ""){
+		 		document.getElementById("result").innerHTML = "<h3> Theres nothing here! </h3>"
+		 	}
+		 	else{
+		 		this.object.push($('#linkedin').val())
+		 		document.getElementById("result").innerHTML = "<h3>" + populateStuff() + "</li>"	
+		 	}
+		 	$('#linkedin').val("")
 		}	
+		var object = []
+
 	</script>
 
-	<div id="result" style="text-align: center;">
-		<p id="insert"> Dummy Text here </p>
-	</div>
+
 
 
 
