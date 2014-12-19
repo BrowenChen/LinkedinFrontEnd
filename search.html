@@ -10,8 +10,12 @@
 	    box-shadow: 0 1px 5px grey;
 	    border-radius: 10px;	    
 	    margin: auto;
+	    /*For cleaner code instead of <br> which adds no value in readability*/
+	    margin-top: 20px;
 	  }
-	  #LinkedIn_container header {
+	  #LinkedIn_container header{
+		color: #333333;
+		font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
 	    padding: 10px 30px; 
 	    box-shadow: 0 1px 2px grey;
 
@@ -40,7 +44,9 @@
 	  }		  
 
 	  #click:hover{
-		color: blue;
+		/*I used mac's digi color meter to read the  RGB values of linkedIn's logo blue ;)*/
+		color: #116FAF;
+		font-size: 120%;
 	  }
 	</style>
 </head>
@@ -49,17 +55,16 @@
 		<header> <h2> Search <h2></header>
 		<section> 
 			<form>
-				<h3>The interview asked to call a GET request and fill the results with the response</h3>
-				<h3> I'll do a variation and just populate the results with whatever input is submitted in the search box.</h3>
+				<h3>The interview asked for this and to call a GET request and fill the results with the response</h3>
+				<h3> I'll do a variation and just populate the results with whatever input is submitted in the search box below.</h3>
 
 				<input type="text" id="linkedin" name="inputbox" placeholder="Enter search here" value="">
 				<input type="button" name="button" value="Click to Add" onclick="fillForm(value)">
 			</form>
 
-			<h3 id="click">Click here to see how I'd implement a GET request</h3>
+			<h3 id="click" onclick="">Click here to see how I'd implement a GET request + more explanations below</h3>
+			<!-- <h3 id="click" onclick="">Also here for description of everything</h3> -->
 	</div>
-
-	<br>
 
 	<div id="LinkedIn_container">
 		<header> <h2> Results <h2></header>
@@ -73,6 +78,24 @@
 			</form>
 		</section>
 	</div>
+
+
+	<div id="LinkedIn_container" style="overflow:scroll;">
+		<header id="get"> <h2> How to get info from URL via GET request? <h2></header>
+		<section> 
+			<p> A GET request: Queries a URL string to get a response from a server. Like if you want a list of names from some API</p>
+			<p> A POST request: Submits data, like if you have a form you want to submit. For example, in computer security if you want to carry out a cross-site request forgery attack, all you do is embed a hidden html form with visibility: hidden property, fille up the values with your malicious code and have your victim click a button that submits a POST request with the data you've entered into the HTML forms.</p>
+			<p> $.get("search_url", <br>
+			{whatever:parameters}, <br>
+			function(data){ console.log("This is the callback function for GET request")
+			$(#result).innerHTML = data;
+			}) </p>
+
+			<p> Alternatively, i liked to use angular, which has the $http service which has the $http.get('/aURL') and has a callback to handle the response data</p>
+
+		</section>
+	</div>
+
 
 	<script type="text/javascript">
 		function populateStuff(){
@@ -95,35 +118,16 @@
 		}	
 		var object = []
 
+       $(document).ready(function (){
+            $("#click").click(function (){
+                //$(this).animate(function(){
+                    $('html, body').animate({
+                        scrollTop: $("#get").offset().top
+                    }, 500);
+                //});
+            });
+        });		
+
 	</script>
-
-
-
-
-
-
-
-<!-- 
-	<div id="outer-container"> 
-		<div id="inner-container"> 
-			<div id="inner-header">
-				<h2> Search Results </h2>
-			</div>
-			<div id="inner-body">
-				<form>
-					<p>Search results here</p>
-					<input type="text" id="linkedin" name="inputbox" placeholder="Enter search here" value="">
-					<input type="button" name="button" value="Search" onclick="fillForm(value)">
-
-				</form> -->
-
-    				<!-- Hidden form -->
-<!--				<form action="/search" method='get' class="search" style="visibility: hidden;">
-    					<input type="text" placeholder="Type in search here"> <button onclick="fillForm('red')"> Search </button>
-    				</form>
- -->				<!-- Hidden form -->
-    			<!-- </div> -->
-    		<!-- </div> -->
-    	<!-- </div> -->
 
 </body>
