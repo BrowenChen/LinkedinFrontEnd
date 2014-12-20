@@ -1,0 +1,113 @@
+<!DOCTYPE>
+<head>
+	<title> URL Parsing </title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<style>
+	#linkedContainer{
+		height: 400px;
+		width: 600px;
+		margin: auto;
+		vertical-align: center;
+		padding: 0px;
+		border: 1px solid silver;
+		box-shadow: 0 1px 5px grey;
+	}
+
+	#linkedContainer header{
+		font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+		padding: 10px 30px;
+		font-weight: bold;
+
+	    box-shadow: 0 1px 2px grey;
+	    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );		
+	}
+	#linkedContainer section{
+		padding: 30px;
+
+	}
+	
+	</style>
+</head>
+
+<body>
+
+	<div id="linkedContainer">
+		<header> 
+		URL parsing Javascript function 
+		</header>
+		<!-- <input value="https://www.google.com/" style="visibility: hidden;">  -->
+		<section>
+			<p> Given URL:
+			https://www.google.com/
+			<form> 
+				<input type="key" id="keyIn" placeholder="Key" value=""> 
+				<input type="value" id="valIn" placeholder="Value" value="">  
+				<button onclick="test()"> Add parameters </button> 
+				<br>
+				<button onclick='parseURL("https://www.google.com/", "list")' style="margin-top: 10px;" > Generate URL</button>
+			</form>
+
+			<button onclick='populate()'> Cl</button>
+
+			<p> Result:
+			https://www.google.com/search?q=term&second=anotherterm#hash
+			</p>
+
+		</section>
+
+		<div id="result" style="text-align: center;">
+			<div id="insert"> Go search for something up there </div>
+		</div>
+
+	</div>
+	<script>
+	var params = {}
+	
+	var paramList = []
+	function test(){
+		var newKey = $('#keyIn').val()
+		var newVal = $('#valIn').val()
+		params[newKey] = newVal
+		alert("The param list")
+		alert(this.paramList)
+		this.paramList.push(newKey)
+		this.paramList.push(newVal)
+		alert("New paramList")
+		alert(this.paramList)
+		
+	}
+
+	function populate(){
+		var paramkeys = Object.keys(this.params) 
+		for (var i = 0; i<paramkeys.length; i++){
+			document.getElementById("result").innerHTML += " " + paramkeys[i]
+		}
+	}
+
+	function parseURL(url, par){
+	    if (url.indexOf("?") == -1){
+			url = url.concat("search?")
+	        alert("oh no!")
+	        alert(url)
+	    }
+
+	    //Start appending the params
+	    for (x in this.params){ 
+	        url += String(x) + "=" + this.params[x] + "&";
+	    }
+	    // Remove the last &
+	    if (url.lastIndexOf('&') == (url.length-1)){
+			url = url.substring(0, url.length-1)
+	    }
+
+	    alert(url)
+	    // return url;
+
+	}
+	</script>
+	
+
+</body>
