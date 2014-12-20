@@ -1,6 +1,6 @@
 <!DOCTYPE>
 <head>
-	<title> Search form </title>
+	<title> Search form question </title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<style>
 	  #LinkedIn_container {
@@ -18,7 +18,6 @@
 		font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
 	    padding: 10px 30px; 
 	    box-shadow: 0 1px 2px grey;
-
 	    /*Linear gradient taken from internet*/
 	    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
 	    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
@@ -79,7 +78,6 @@
 		</section>
 	</div>
 
-
 	<div id="LinkedIn_container" style="overflow:scroll;">
 		<header id="get"> <h2> How to get info from URL via GET request? <h2></header>
 		<section> 
@@ -93,19 +91,19 @@
 
 			<p> Alternatively, i liked to use angular, which has the $http service which has the $http.get('/aURL') and has a callback to handle the response data</p>
 
+			<p> For css styling, I typically would go online, check out some good design websites and inspect element to figure out what looks best. (When you hover over the click me link up there, it changes to linked's blue logo color). </p>
 		</section>
 	</div>
 
-
 	<script type="text/javascript">
 		function populateStuff(){
-
 			var result = ""
 			for (var i = 0; i < this.object.length; i++){
 				result += "<li>" + this.object[i] + "</li>"
 			}
 			return result
 		}
+
 		function fillForm(value){
 		 	if ($('#linkedin').val() == ""){
 		 		document.getElementById("result").innerHTML = "<h3> Theres nothing here! </h3>"
