@@ -7,6 +7,7 @@
 		height: 400px;
 		width: 600px;
 		margin: auto;
+		margin-top: 25px;
 		vertical-align: center;
 		padding: 0px;
 		border: 1px solid silver;
@@ -36,49 +37,82 @@
 
 	<div id="linkedContainer">
 		<header> 
-		URL parsing Javascript function 
+		Q3) URL parsing Javascript function 
 		</header>
 		<!-- <input value="https://www.google.com/" style="visibility: hidden;">  -->
 		<section>
+			
+			<p> Enter in three key value parameters to append to a valid URL string for a search query.
 			<p> Given URL:
 			https://www.google.com/
 			<form> 
-				<input type="key" id="keyIn" placeholder="Key" value=""> 
-				<input type="value" id="valIn" placeholder="Value" value="">  
-				<button onclick="test()"> Add parameters </button> 
+				<!-- First key value pair -->
+				<div class="keyVal_Row"> 
+					<input type="key" id="keyIn" placeholder="Key" value=""> 
+					<input type="value" id="valIn" placeholder="Value" value="">  
+				</div>
+				
+				<!-- Second key value pair -->
+				<div class="keyVal_Row"> 
+					<input type="key" id="keyIn2" placeholder="Key" value=""> 
+					<input type="value" id="valIn2" placeholder="Value" value="">  
+				</div>
+
+				<!-- Third key value pair -->
+				<div class="keyVal_Row"> 
+					<input type="key" id="keyIn3" placeholder="Key" value=""> 
+					<input type="value" id="valIn3" placeholder="Value" value="">  
+				</div>
+				
 				<br>
 				<button onclick='parseURL("https://www.google.com/", "list")' style="margin-top: 10px;" > Generate URL</button>
 			</form>
 
-			<button onclick='populate()'> Cl</button>
-
-			<p> Result:
-			https://www.google.com/search?q=term&second=anotherterm#hash
-			</p>
+    			
+    			<p> The generated URL string will show as a popup </p>
+<!--			<p> Result:
+    				<div id="result">
+    				</div>
+    			</p>  -->
 
 		</section>
 
-		<div id="result" style="text-align: center;">
-			<div id="insert"> Go search for something up there </div>
-		</div>
-
 	</div>
-	<script>
-	var params = {}
 	
-	var paramList = []
-	function test(){
-		var newKey = $('#keyIn').val()
-		var newVal = $('#valIn').val()
-		params[newKey] = newVal
-		alert("The param list")
-		alert(this.paramList)
-		this.paramList.push(newKey)
-		this.paramList.push(newVal)
-		alert("New paramList")
-		alert(this.paramList)
-		
-	}
+	<div id="linkedContainer" style="margin-bottom: 25px;">
+		<header> Q3.b) How to account for hashtags? </header>
+
+		<section> 
+			<p> Do a (if url.indexOf("#") != -1) then slice the substring, add in the parameters into the first slice, then append on the second substring that includes the hash + everything after it</p>
+
+			<p> 
+			if (if url.indexOf("#") != -1){ <br>
+			&nbsp; firstSlice = url.substring(0, url.indexOf("#")) <br> 
+			&nbsp;secondSlice = url.substring(url.indexOf("#"), url.length-1) <br>
+			etc..
+			<br>
+			}
+			</p>
+			<p> For example. URL: https://www.google.com/search?key=value&second=hey#yo </p>			
+
+
+			<div class="keyVal_Row"> 
+			      	<input type="key" id="keyIn3" placeholder="Key" value=""> 
+			      	<input type="value" id="valIn3" placeholder="Value" value="">  
+			      	<button onclick="hashIt()"> Add new params</button>
+			</div>			
+			<br>
+			The new generated URL will show as a popup
+			
+		</section>
+	</div>
+
+
+	<script>
+
+	//Alternatively, to account for variable lenth inputs, create a global object and keep adding the key value parameters into the object. Then, parseURL() would iterate throught hat object and add on key value pairs from the object.
+
+	//This one is just hardcoding three key value pairs into a URL string
 
 	function populate(){
 		var paramkeys = Object.keys(this.params) 
@@ -88,24 +122,41 @@
 	}
 
 	function parseURL(url, par){
+		var newKey = $('#keyIn').val()
+		var newVal = $('#valIn').val()
+
+		var newKey2 = $('#keyIn2').val()
+		var newVal2 = $('#valIn2').val()
+
+		var newKey3 = $('#keyIn3').val()
+		var newVal3 = $('#valIn3').val()
+
 	    if (url.indexOf("?") == -1){
 			url = url.concat("search?")
-	        alert("oh no!")
-	        alert(url)
 	    }
 
-	    //Start appending the params
-	    for (x in this.params){ 
-	        url += String(x) + "=" + this.params[x] + "&";
-	    }
+		url += newKey + "=" + newVal + "&"
+		url += newKey2 + "=" + newVal2 + "&"
+		url += newKey3 + "=" + newVal3	
+
+	    // //Start appending the params
+	    // for (x in this.params){ 
+	    //     url += String(x) + "=" + this.params[x] + "&";
+	    // }
 	    // Remove the last &
 	    if (url.lastIndexOf('&') == (url.length-1)){
 			url = url.substring(0, url.length-1)
 	    }
 
-	    alert(url)
-	    // return url;
+		alert("The new url: " + url)
+	    var newElement = document.createElement('div');
+	    newElement.innerHTML = url
+	    document.getElementById('result').appendChild(newElement)
+	}
 
+
+	function hashIt(){
+		alert("hey hash")
 	}
 	</script>
 	
