@@ -1,0 +1,364 @@
+<!DOCTYPE>
+<head>
+
+  <title> app-list-normal </title>
+  <style>
+      .h1{
+          text-align: left;
+          font-weight:bold;   
+          
+      }
+      .table-row{
+          /*border-top: solid, 2px, black;*/
+          height: 100px;
+          padding: 10px;
+          /*border: 1px solid black;*/
+          border-top: 1px solid silver;
+      }
+
+
+      .Linkedin-List-Container{
+        height: 400px;
+        width: 600px;
+        margin: auto;
+        margin-top: 20px;
+        border: 1px solid silver;
+        text-align: left;
+        border-radius: 1px;
+        box-shadow: 0 1px 5px grey;
+        padding: 10px;
+        z-index: 1;
+        background-color: white;  
+      }
+
+
+      .Linked-Out-Container{
+        height: 475px;
+        width: 700px;  
+        margin: auto;
+        margin-top: 20px;
+        border: 1px solid silver;
+        background-color: #D7D7D7;
+        border-radius: 1px;
+        box-shadow: 0 1px 5px grey;
+        padding: 10px;
+        z-index: -1;
+      }
+
+      #info {
+        font-size: 80%;
+      }
+     
+      #avatar{
+          /*border: 1px solid black;*/
+          
+      }
+
+      #avatar-image{
+          position: relative;
+          margin: 0 0 auto;
+          vertical-align: center;
+          width: 100%;
+          height: 90%;
+      }
+     
+      #isActive{
+          background-color: #FFFFBE;    
+      }
+     
+      #name{
+          font-size:  130%;
+          font-weight: bold;
+          color: #0A60A6;
+      }
+     
+      #name:hover {
+          font-size: 135%;
+          /*text-decoration: underline;*/
+      }
+     
+      #description{
+          font-size: 100%;
+          font-weight: bold;
+          padding-bottom: 2px;
+      }
+     
+      #contact{
+          font-size: 1 em;
+          color: grey;
+      }
+     
+      #date{
+          font-weight: bold;
+          color: grey;
+          font-size: 80%;
+      }
+
+  </style>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+<div class="Linked-Out-Container">
+
+  <div class="Linkedin-List-Container">
+
+    <h2> <b> Recent Applicants</b></h2>
+  
+  <table>
+      <!-- #Rows for applicatnt -->
+      <div class="table-row" id="isActive">
+      
+        <div class="col-sm-2" id="avatar">
+            <img id="avatar-image" src="link.png">
+        </div>
+
+         <div class="col-sm-7" id="info">
+             
+             <div id="name" href="link_to_port" > Toon Link </div>
+             
+             <div id="description"> Hero of Time</div>
+             <div id="position"> Hyrule | Athletics </div>
+             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+             <div id="email">
+                 <a href="link to send mail"> <span id="contact"> Email </span>: link@triforce.com</a>          
+             </div>
+                 
+        </div>
+
+         <div class="col-sm-3" id="date">
+            Aug. 4th, 2011
+            Featured Applicant
+         </div>    
+      </div>
+
+
+
+      <div class="table-row">
+      
+        <div class="col-sm-2" id="avatar">
+            <img id="avatar-image" src="zeld.png">
+        </div>
+
+         <div class="col-sm-7" id="info">
+             
+             <div id="name" href="link_to_port" > Princess Zelda</div>
+             
+             <div id="description"> High Ruler of Hyrule</div>
+             <div id="position"> Hyrule | Government </div>
+             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+             <div id="email">
+                 <a href="link to send mail"> <span id="contact"> Email </span>: zelda@triforce.com</a>          
+             </div>
+                 
+        </div>
+
+         <div class="col-sm-3" id="date">
+            Aug. 2nd, 2011
+         </div>    
+      </div>
+
+
+
+      <div class="table-row" style="border-bottom: 1px solid silver;">
+      
+        <div class="col-sm-2" id="avatar">
+            <img id="avatar-image" src="stand.png">
+        </div>
+
+         <div class="col-sm-7" id="info">
+             
+             <div id="name" href="link_to_port" > Dark Lord Ganondorf</div>
+             
+             <div id="description"> Taking over the world, one kingdom at a time</div>
+             <div id="position"> Dark Realm | Other </div>
+             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+             <div id="email">
+                 <a href="link to send mail"> <span id="contact"> Email </span>: ganon@darkrealm.com</a>          
+             </div>
+                 
+        </div>
+
+         <div class="col-sm-3" id="date">
+            Aug. 2nd, 2011
+         </div>    
+      </div>      
+
+
+  </table>
+
+
+</body>
+<!--           <div class="col-sm-2" id="avatar">
+              <img src="file_location">
+          </div>
+         
+         <div class="col-sm-7" id="info">
+             #name
+             <div id="name"> <a href="link_to_port"{{ applicant.name}} </a></div>
+             <br>
+            
+             <div id="description"> {{ applicant.description}}</div>
+             <br>
+            
+             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
+             <br>
+            
+             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
+             <br>                     
+            
+             <div id="email">
+                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
+              
+             </div>
+             <br>          
+         
+         
+          </div>
+         <div class="col-sm-3" id="date">
+            {{applicant.submissionDate}}
+            {{applicant.isFeatured}} 
+         </div>    -->    
+     
+      <!-- </div> -->
+  
+
+
+
+<!--   <table>
+      #Rows for applicatnt
+      <div class="table-row" id="isActive">
+          <div class="col-sm-2" id="avatar">
+              <img src="file_location">
+          </div>
+         
+         <div class="col-sm-7" id="info">
+             #name
+             <div id="name"> <a href="link_to_port"{{ applicant.name}} </a></div>
+             <br>
+            
+             <div id="description"> {{ applicant.description}}</div>
+             <br>
+            
+             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
+             <br>
+            
+             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
+             <br>                     
+            
+             <div id="email">
+                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
+              
+             </div>
+             <br>          
+         
+         
+          </div>
+         <div class="col-sm-3" id="date">
+            {{applicant.submissionDate}}
+            {{applicant.isFeatured}} 
+         </div>       
+     
+      </div>
+     
+     
+     
+     
+     
+      #Second applicnt
+     
+      <div class="table-row">
+          <div class="col-sm-2" id="avatar">
+              <img src ="file_location" id="avatar_image">
+            
+          </div>
+         
+         <div class="col-sm-7" id="info">
+             #name
+             <div id="name"> {{ applicant.name}}</div>
+             <br>
+            
+             <div id="description"> {{ applicant.description}}</div>
+             <br>
+            
+             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
+             <br>
+            
+             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
+             <br>                     
+            
+             <div id="email">
+                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
+              
+             </div>
+             <br>          
+         
+         
+          </div>
+         <div class="col-sm-3" id="date">
+            {{applicant.submissionDate}}
+            {{applicant.isFeatured}} 
+         </div>       
+     
+      </div>
+     
+     
+     
+     
+     
+     
+     
+      #Third applicant
+     
+      <div class="table-row">
+          <div class="col-sm-2" id="avatar">
+              <img src="file_location">
+            
+          </div>
+         
+         <div class="col-sm-7" id="info">
+             #name
+             <div id="name"> {{ applicant.name}}</div>
+             <br>
+            
+             <div id="description"> {{ applicant.description}}</div>
+             <br>
+            
+             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
+             <br>
+            
+             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
+             <br>                     
+            
+             <div id="email">
+                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
+              
+             </div>
+             <br>          
+         
+         
+          </div>
+         <div class="col-sm-3" id="date">
+            {{applicant.submissionDate}}
+            {{applicant.isFeatured}} 
+         </div>       
+     
+      </div>
+     
+     
+     
+     
+         
+     
+
+  </table>
+
+
+
+  </div>
+</body>
+
