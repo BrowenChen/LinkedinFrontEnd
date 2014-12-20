@@ -88,7 +88,7 @@
 			<p> 
 			if (if url.indexOf("#") != -1){ <br>
 			&nbsp; firstSlice = url.substring(0, url.indexOf("#")) <br> 
-			&nbsp;secondSlice = url.substring(url.indexOf("#"), url.length-1) <br>
+			&nbsp;secondSlice = url.substring(url.indexOf("#"), url.length) <br>
 			etc..
 			<br>
 			}
@@ -97,9 +97,9 @@
 
 
 			<div class="keyVal_Row"> 
-			      	<input type="key" id="keyIn3" placeholder="Key" value=""> 
-			      	<input type="value" id="valIn3" placeholder="Value" value="">  
-			      	<button onclick="hashIt()"> Add new params</button>
+			      	<input type="key" id="keyHash" placeholder="Key" value=""> 
+			      	<input type="value" id="valHash" placeholder="Value" value="">  
+			      	<button onclick="hashIt('https://www.google.com/search?key=valuesecond=hey#yo')"> Add new params</button>
 			</div>			
 			<br>
 			The new generated URL will show as a popup
@@ -155,9 +155,27 @@
 	}
 
 
-	function hashIt(){
-		alert("hey hash")
+	function hashIt(url, params){
+		var newKey = $('#keyHash').val()
+		var newVal = $('#valHash').val()
+
+		if (newKey == '' || newVal ==''){
+			alert("Fill in the values first!!!")
+		}
+
+		else if (url.indexOf('#') != -1){
+		 	firstSlice = url.substring(0, url.indexOf('#'))
+		 	secondSlice = url.substring(url.indexOf('#'), url.length)
+		 	url = firstSlice + '&' + newKey + '=' + newVal + secondSlice
+		 	alert("The new url is....")
+		 	alert(url)
+		}	
+
+
 	}
+
+
+
 	</script>
 	
 
