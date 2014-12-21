@@ -1,0 +1,1075 @@
+<!DOCTYPE>
+<head>
+
+  <title> Linkedin Page Replica + extras </title>
+
+<!--   Sorry for getting really unorganized with the code, at first I was just doing individual picture recreations and eventually I started just hacking together. Normally I'd be more modularized, but I just wanted to get things done first this time around
+ -->
+  <script src="jquery-1.11.2.js"></script>
+
+  <!-- Used bootstrap's grid layout for some stuff -->
+  <link rel="stylesheet" href="bootstrap.css">
+  <script src="bootstrap.js"></script>  
+
+  <!-- This is for the premium font up on the header -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
+  <style>
+	.navbar{
+		/*background-color: #D7D7D7;*/
+		box-shadow: 0px 1px 2px black;
+		height: 40px;
+		border-radius: 0;
+		background: -webkit-linear-gradient(#606060, #414141); /* For Safari 5.1 to 6.0 */
+	}
+
+
+	.main_header{
+		border-bottom: 1px solid silver;
+		margin: 20px;
+	}
+
+	#search_button{
+		border: 1px solid #1A579D; 
+		background-color: #116FAF; 
+		border-radius: 5px;
+		height: 28px;
+		width: 50px;
+	}
+
+	#header_search{
+		border: 1px solid black;
+		height: 28px;
+		width: 270px;
+		border-radius: 3px;
+	}
+
+	#drop_img{
+		height: 28px;
+		position: relative; 
+		/*border:1px solid yellow; */
+		top: -1px; 
+		right: -3px;
+	}
+
+	#premium{
+		letter-spacing: 5px; 
+		color: #ecf0f1; 
+		text-transform:uppercase; 
+		font-family: 'Open Sans'
+		sans-serif;
+	}
+	#linkedin_logo{
+		position: relative;
+		height: 80%;
+		border-radius: 5px;
+		left: -10px;
+	}
+
+	.header_icons{
+		margin-left: 20px;
+	}
+
+	/*---------------------Question 2 css stuff---------------------*/  
+      .h1{
+          text-align: left;
+          font-weight:bold;   
+          
+      }
+      a:hover{
+        font-size: 105%;
+      }
+      .table-row{
+          /*border-top: solid, 2px, black;*/
+          height: 100px;
+          padding: 10px;
+          /*border: 1px solid black;*/
+          border-top: 1px solid silver;
+      }
+
+
+      .Linkedin-List-Container{
+        height: 400px;
+        width: 600px;
+        margin: auto;
+        margin-top: 20px;
+        border: 1px solid silver;
+        text-align: left;
+        border-radius: 1px;
+        box-shadow: 0 1px 5px grey;
+        padding: 10px;
+        z-index: 1;
+        background-color: white;  
+      }
+
+
+      .Linked-Out-Container{
+        height: 475px;
+        width: 700px;  
+        margin: auto;
+        margin-top: 20px;
+        border: 1px solid silver;
+        background-color: #D7D7D7;
+        border-radius: 1px;
+        box-shadow: 0 1px 5px grey;
+        padding: 10px;
+        z-index: -1;
+      }
+
+      #info {
+        font-size: 80%;
+      }
+     
+      #avatar{
+          /*border: 1px solid black;*/
+          
+      }
+
+      #avatar-image{
+          position: relative;
+          margin: 0 0 auto;
+          vertical-align: center;
+          width: 100%;
+          height: 90%;
+      }
+     
+      #isActive{
+          background-color: #FFFFBE;    
+      }
+     
+      #name{
+          font-size:  130%;
+          font-weight: bold;
+          color: #0A60A6;
+      }
+     
+      #name:hover {
+          font-size: 135%;
+          /*text-decoration: underline;*/
+      }
+     
+      #description{
+          font-size: 100%;
+          font-weight: bold;
+          padding-bottom: 2px;
+      }
+     
+      #contact{
+          font-size: 1 em;
+          color: grey;
+      }
+     
+      #date{
+          font-weight: bold;
+          color: grey;
+          font-size: 80%;
+      }
+
+	/*---------------------Question 2 css stuff---------------------*/
+
+	/*---------------------Question 3 css stuff---------------------*/
+
+	#linkedContainer{
+		height: 400px;
+		width: 600px;
+		margin: auto;
+		margin-top: 25px;
+		vertical-align: center;
+		padding: 0px;
+		border: 1px solid silver;
+		box-shadow: 0 1px 5px grey;
+		background-color: white;
+	}
+
+	#linkedContainer header{
+		font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+		padding: 10px 30px;
+		font-weight: bold;
+
+	    box-shadow: 0 1px 2px grey;
+	    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );		
+	}
+	#linkedContainer section{
+		padding: 30px;
+
+	}
+	/*---------------------Question 3 css stuff---------------------*/
+
+
+	/*---------------------Question 4 css stuff---------------------*/
+
+
+	  #LinkedIn_container {
+		height: 300px;
+	    width: 500px;
+	    border: 1px solid white;
+
+	    box-shadow: 0 1px 5px grey;
+	    border-radius: 10px;	    
+	    margin: auto;
+	    /*For cleaner code instead of <br> which adds no value in readability*/
+	    margin-top: 20px;
+	  }
+	  #LinkedIn_container header{
+		color: #333333;
+		font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+	    padding: 10px 30px; 
+	    box-shadow: 0 1px 2px grey;
+
+	    /*Linear gradient taken from internet*/
+	    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -o-linear-gradient( top, #f1f1f1, #CCC ); 
+	  }
+	  #LinkedIn_container section {
+
+	    padding: 10px 30px; 
+	    font-size: 12px;
+	  }	
+	  #LinkedIn_container h3 {
+	    text-shadow: 0 1px 2px white;
+	    color: #888;
+	    text-align: left;
+	    margin-top: 5px;
+	    font-weight: normal;
+	  }
+	  #LinkedIn_container form input p {
+	   	text-shadow: 0 1px 2px white;
+	   	margin-top: 3px;
+	   	color: #888;
+	   	font-weight: normal;
+	  }		  
+
+	  #click:hover{
+		/*linkedIn's logo blue ;)*/
+		color: #116FAF;
+		font-size: 120%;
+	  }
+
+
+	/*---------------------Question 4 css stuff---------------------*/
+
+
+  </style>
+
+
+</head>
+
+
+<body style="background-image: url('txt_grain.png')">
+
+<div class="navbar"> 
+
+	<div class='col-sm-3' style="height: 100%;"> 
+		<img id="linkedin_logo" src="linklogo.png" style="padding-top: 2px;"> <span id="premium"> premium </span>
+	</div>
+
+	<div class='col-sm-6' style="height: 100%; padding-top: 6px;"> 
+		<span> <img src="drop.png" id="drop_img"> </span><input id="header_search" placeholder="Search bar..." style="margin-left:0px;"> <button id="search_button">  <i class="fa fa-search" style="color: white;"></i> </button> <span style="color: silver; font-size: 80%;"> Advanced </span>
+	</div>
+	
+	<div class='col-sm-3' style="height: 100%;"> 
+
+		<a><img class="header_icons" src="mail.png" style="height: 55%;"></a>
+		<a><img class="header_icons" src="flag.png" style="height: 65%; margin-top: 7px;"> </a>
+		<a><img class="header_icons" src="prof_icon.png" style="height: 60%;"></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="main_header"> 
+	<h1 style="text-align:center; color: #116FAF"> [In]terview Questions </h1>
+</div>
+
+<!-- <div class="intro_text" style=" padding: 5px;width: 60%; margin: auto; margin-bottom: 10px; background-color: #EDF0F3; box-shadow: 0 1px 1px grey; border-radius: 3px;">
+
+</div> -->
+
+	<p style="text-align:center; width: 60%; margin:auto; margin-bottom: 15px;"> Source code for this page <a href=""> [here]</a> (No templating) <br> <i>No responsive design yet. View at 1000px width and above. Sorry </i></p>
+
+<style>
+#intro_container{
+	
+	/*border: 1px solid yellow;*/
+	height: 300px;
+}
+
+#intro_left{
+	/*background-color: silver;*/
+	margin: 0px;
+	padding: 5px;
+	/*border: 1px solid black;*/
+}
+
+#intro_left header{
+	background-color: #F5F5F5;
+	padding: 0px;
+	margin: 0px;
+	box-shadow: 0 1px 1px black;
+
+}
+
+#intro_left section{
+	background-color: white;
+	height: 200px;
+	padding: 0px;
+	margin: 0px;
+	box-shadow: 0 1px 1px black;
+	border-radius: 1px;
+	padding-top: 10px;
+}
+
+#intro_right{
+	/*border: 1px solid black;*/
+}
+
+#intro_right header{
+	/*border: 1px solid black;*/
+}
+
+#intro_right section{
+	background-color: white;
+	box-shadow: 0 1px 1px black;
+	height: 265px;
+	padding: 15px;
+	border-radius: 2px;
+}
+
+input[type='text']{
+	width: 300px;
+	height: 33px;
+
+}
+
+#newsList{
+	padding: 0px;
+	list-style: none;
+
+}
+
+#newsList img{
+	height: 37px;
+	width: 60px;
+	border-radius: 5px;
+}
+
+#newsList li{
+	padding-top: 5px;
+}
+
+#newsList p{
+	line-height: 10px;
+	color: grey	;
+	font-size: .8em;
+}
+
+</style>
+
+	<div id="intro_container" style="width: 80%; margin: auto;">
+		<div class="col-sm-7" id="intro_left"> 
+			<header id="intro_left_header">
+				<img src="prof_pic_2.png" style="height: 65px; width: 65px;"> 
+				<input type="text" placeholder="Overview of Owen's technical exp.." > 
+			</header>
+
+			<section>
+				<div class="col-sm-2" style="padding: 0px;"><img src="pulse.png" style="height: 62px; width: 62px;"> </div>
+				
+				<div class="col-sm-8">
+				
+					<div> <b style="color:#116FAF; ">Owen</b> recommends to view his <a href="http://www.github.com/browenchen"> [github] <i class="fa fa-github-square"></i>
+
+					</a>  
+					</div>
+
+					<ul id="newsList">
+						<li class="row" id="article1">
+
+							<div class="col-sm-3"> 
+								<img src="monkey.png"> 
+							</div>
+							
+							<div class="col-sm-9">
+							
+								<a href="http://educationalalgorithms.herokuapp.com"><b> Adaptive Learning Algorithms </b></a>
+								
+								<p> Pure JS &middot; <a href="https://github.com/BrowenChen/EducationAlgorithms/tree/master/THEALGORITHMS">Code Repo</a> </p>
+							
+							</div>
+						</li>
+
+
+						<li class="row" id="article2">
+							<div class="col-sm-3"> 
+								<img src="zzish.png"> 
+							</div>
+							
+							<div class="col-sm-9">
+								<a href="https://learninghub.zzish.com"><b> LearningHub </b></a>
+								<p> AngularJS, Jade, Sockets, d3 &middot; <a href="https://github.com/BrowenChen/classroomDashboard">Repo</a></p>
+							</div>
+						</li>
+
+						<li class="row" id="article3">
+							<div class="col-sm-3"> 
+								<img src="firewall.png"> 
+							</div>
+							
+							<div class="col-sm-9">
+								<a href="https://github.com/BrowenChen/Firewall2/blob/master/Firewall-Full-Final.py"><b> Firewall </b></a>
+								<p> Stateful Packet Filter &middot; 2w ago <a href="https://github.com/BrowenChen/Firewall2/blob/master/Firewall-Full-Final.py">Repo</a></p>
+							</div>
+						</li>
+
+						<li> 
+							<a href="http://www.linkedin.com/in/browenchen" style="color:#116FAF;"> See his Linked<i class="fa fa-linkedin-square"></i> profile </a>
+						</li>
+
+					</ul>
+
+				<div> 
+			</section>
+
+			<style>
+				.second_section{
+					position: relative;
+					/*background-color: white;*/
+					height: 200px;
+					padding: 0px;
+					/*box-shadow: 0 1px 1px black;*/
+					border-radius: 1px;
+					padding-top: 10px;					
+					display: inline-block;
+					margin-top: 10px; 
+					padding: 10px; 
+					height: 147px; 
+					width: 100%;		
+				}
+
+
+				#first_box{
+					position: absolute;
+					background-color: white;
+					width: 48%;
+					/*border: 1px solid yellow;*/
+					box-shadow: 0 2px 1px black;
+
+					left: 1px;
+					height: 95%;
+				}
+
+				#second_box{
+					/*border: 1px solid green;*/
+					position: absolute;
+					background-color: white;
+					box-shadow: 0 2px 1px black;
+
+					right: 1px;
+					width: 48%;
+					height: 95%;					
+				}
+
+				.box_sections{
+					padding:15px;
+					height: 70%;
+					/*box-shadow: 0 1px 1px black;*/
+				}
+
+				.second_section footer{
+					font-weight: bold;
+					color: grey;
+					position: absolute;
+					bottom: 0px;              	
+					/*border: 1px solid green;	*/
+					width:100%;
+					height: 30%;
+					padding: 10px;
+					text-align: center;       		
+					background-color: #EAEAEA;	
+					/*box-shadow: 0 1px 1px black;*/
+				}
+
+				.body_left{
+					position: absolute;
+					left: 0px;
+					top:0px;
+					width: 35%;
+					height: 70%;
+					/*border: 1px solid yellow;*/
+				}
+
+				.body_left img{
+					margin: 10px;
+					position: absolute;
+					width: 60px;
+					height: 60px;
+					
+
+				}				
+				.body_right{
+					position: absolute;
+					right: 0px;
+					top: 0px;
+					width: 65%;
+					height: 70%;
+					/*border: 1px solid yellow;*/
+				}
+				.body_right p{
+					font-size: .7em;
+					color: grey;
+
+				}
+
+			</style>
+			<div class="second_section">
+				
+				<div id="first_box">
+					<div class="box_sections" id="first_box_section">
+						
+							<div class="body_left">
+							      	<img src="industry.png">
+							</div>	
+							<div class="body_right">
+								<h4> Theory</h4>
+								<p> Machine Structures, Systems Security, Databases, Networking, AI, Cognitive Computing, Algorithms etc.. </p>
+
+							</div>
+			
+						
+						
+						
+					</div>
+
+
+					<footer>
+						See More
+					</footer>
+
+
+
+				</div>
+
+
+				<div id="second_box">
+					<div class="box_sections" id="second_box_section">
+						<div class="body_left">
+							<img src="language.png">
+						</div>
+						
+						<div class="body_right">
+							<h4> Industry </h4>
+
+							<p>Last summer, Techstar's picked 11/1,500 startups worldwide for their batch.  </p>
+
+						</div>
+						
+
+					</div>
+
+
+					<footer>
+						
+					    Check it out
+					</footer>				
+				</div>
+
+
+			</div>			
+			
+
+
+		</div>
+		
+
+		<style>
+		#person-description {
+			padding: 0px;
+			line-height: 15px;
+			margin-top: 10px;
+
+		}
+		#code1 img{
+			width: 40px;
+			height: 40px;
+			margin-top: 10px;
+		}
+
+		#person-description b{
+			color: #116FAF;
+		}
+
+		.fa-times{
+			color:silver;
+			float: right; 
+			margin-right: 20px; 
+		}
+
+		</style>
+		<div class="col-sm-5" id="intro_right" style="top:5px;"> 
+			<section> 
+			<h5 style="padding-bottom: 5px;border-bottom: 1px solid #ecf0f1">Recent <span style="color: #116FAF;">[In]</span>terview Questions</h5>
+			
+			<div class="row" id="code1"> 
+
+				<div class="col-sm-3">
+					<img src="anon.png">
+				</div>
+
+				<div id="person-description" class="col-sm-9">
+					<b> Legend of Zelda </b> <span><i class="fa fa-times"></i></span>
+					<p> Recreate this picture </p>
+
+				</div>
+
+			</div>
+			
+			<div class="row" id="code1"> 
+				<div class="col-sm-3">
+					<img src="anon.png">
+				</div>
+
+				<div id="person-description" class="col-sm-9">
+					<b> Fix the URL </b> <span><i class="fa fa-times"></i></span>
+					<p> Write some JS </p>	
+				</div>
+			</div>
+			
+
+			<div class="row" id="code1"> 
+				<div class="col-sm-3">
+					<img src="anon.png">
+				</div>
+
+				<div id="person-description" class="col-sm-9">
+					<b> Search box </b> <span><i class="fa fa-times"></i></span>
+					<p> JQuery GET request </p>	
+				</div>
+			</div>
+			
+			<p style="text-align:right; margin-top: 20px; color: #116FAF; border-bottom: 1px solid #ecf0f1;"> Want to ask more? <i class="fa fa-angle-double-right"></i>
+</p>
+			</section>
+
+
+			<style>
+				#pop-up{
+					height: 90%;
+					/*background-color: #2c3e50;*/
+					/*border-radius: 3px;*/
+					/*box-shadow: 0 2px 2px #ecf0f1;*/
+					
+					padding: 20px;
+				}
+
+
+				.profile_left{
+					position: absolute;
+					width: 50%;
+					border: 1px solid yellow;
+					
+				}
+
+				.profile_right{
+					position: absolute;
+					width: 30%;
+					border: 1px solid yellow;
+					right: 0;	
+					height: 80%;
+				}
+
+				#profile_img{
+					width: 260px; 
+					height: 100px; 
+					padding: 5px; 
+					/*border: 1px solid yellow; */
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+    			</style>
+    			<section style="height: 55%;"> 
+    				<h5 style="text-align:left"> Profile Strength</h5>
+<!--				<div id="pop-up" style="">
+    					<h5> Profile Strength</h5>
+
+
+              				</div>
+asdasdasds -->		
+              			<div class="row"> 
+              				
+              				<img id="profile_img" src="profile_strength.png" style="">
+              				
+
+
+
+						</div>
+					
+
+
+
+			</section>
+
+
+
+		</div>
+
+		 
+	</div>
+
+
+
+	<div style="clear:both; padding-top: 20px;">
+		<h2 style="text-align:center; color: #116FAF;"> Q2) Recreate this dashboard picture</h2>
+		<p style="text-align:center;"> <a href="https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg"> https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg </a> </p>
+	</div>
+
+<div class="Linked-Out-Container">
+
+  <div class="Linkedin-List-Container">
+
+  <!-- For example, this here is h2 cuz its a header in a subcomponent.  -->
+    <h2> <b> Recent Applicants</b></h2>
+  
+  <table>
+      <!-- #Rows for applicatnt -->
+      <div class="table-row" id="isActive">
+      
+        <div class="col-sm-2" id="avatar">
+            <img id="avatar-image" src="link.png">
+        </div>
+
+         <div class="col-sm-7" id="info">
+             
+             <div id="name" href="link_to_port" > Toon Link </div>
+             <div id="description"> Hero of Time</div>
+             <div id="position"> Hyrule | Athletics </div>
+             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+             <div id="email">
+                 <a href="link to send mail"> <span id="contact"> Email </span>: link@triforce.com</a>          
+             </div>
+                 
+        </div>
+
+         <div class="col-sm-3" id="date">
+            Aug. 4th, 2011
+            Featured Applicant
+         </div>    
+      </div>
+
+
+
+      <div class="table-row">
+      
+        <div class="col-sm-2" id="avatar">
+            <img id="avatar-image" src="zeld.png">
+        </div>
+
+         <div class="col-sm-7" id="info">
+             
+             <div id="name" href="link_to_port" > Princess Zelda</div>
+             
+             <div id="description"> High Ruler of Hyrule</div>
+             <div id="position"> Hyrule | Government </div>
+             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+             <div id="email">
+                 <a href="link to send mail"> <span id="contact"> Email </span>: zelda@triforce.com</a>          
+             </div>
+                 
+        </div>
+
+         <div class="col-sm-3" id="date">
+            Aug. 2nd, 2011
+         </div>    
+      </div>
+
+
+
+      <div class="table-row" style="border-bottom: 1px solid silver;">
+      
+        <div class="col-sm-2" id="avatar">
+            <img id="avatar-image" src="stand.png">
+        </div>
+
+         <div class="col-sm-7" id="info">
+             
+             <div id="name" href="link_to_port" > Dark Lord Ganondorf</div>
+             
+             <div id="description"> Taking over the world, one kingdom at a time</div>
+             <div id="position"> Dark Realm | Other </div>
+             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+             <div id="email">
+                 <a href="link to send mail"> <span id="contact"> Email </span>: ganon@darkrealm.com</a>          
+             </div>
+                 
+        </div>
+
+         <div class="col-sm-3" id="date">
+            Aug. 2nd, 2011
+         </div>    
+      </div>      
+
+
+  </table>
+
+
+</div>
+</div>
+
+<!--   <p style="text-align:center; padding-top: 25px;"> I can implement more actual functionalities with javascript if you'd like</p> -->
+
+
+
+<br>
+<!-- Question three here -->
+<h2 style="text-align:center; color: #116FAF;"> Q3) Write a URL parser in JS</h2>
+	<div id="linkedContainer">
+		<header> 
+		Q3) URL parsing Javascript function 
+		</header>
+		<!-- <input value="https://www.google.com/" style="visibility: hidden;">  -->
+		<section>
+			
+			<p> Enter in three key value parameters to append to a valid URL string for a search query.
+			<p> Given URL:
+			https://www.google.com/
+			<form> 
+				<!-- First key value pair -->
+				<div class="keyVal_Row"> 
+					<input type="key" id="keyIn" placeholder="Key" value=""> 
+					<input type="value" id="valIn" placeholder="Value" value="">  
+				</div>
+				
+				<!-- Second key value pair -->
+				<div class="keyVal_Row"> 
+					<input type="key" id="keyIn2" placeholder="Key" value=""> 
+					<input type="value" id="valIn2" placeholder="Value" value="">  
+				</div>
+
+				<!-- Third key value pair -->
+				<div class="keyVal_Row"> 
+					<input type="key" id="keyIn3" placeholder="Key" value=""> 
+					<input type="value" id="valIn3" placeholder="Value" value="">  
+				</div>
+				
+				<br>
+				<button onclick='parseURL("https://www.google.com/", "list")' style="margin-top: 10px;" > Generate URL</button>
+			</form>
+
+    			
+    			<p> The generated URL string will show as a popup </p>
+<!--			<p> Result:
+    				<div id="result">
+    				</div>
+    			</p>  -->
+
+		</section>
+
+	</div>
+	
+	<div id="linkedContainer" style="margin-bottom: 25px;">
+		<header> Q3.b) How to account for hashtags? </header>
+
+		<section> 
+			<p> Do a (if url.indexOf("#") != -1) then slice the substring, add in the parameters into the first slice, then append on the second substring that includes the hash + everything after it</p>
+
+			<p> 
+			if (if url.indexOf("#") != -1){ <br>
+			&nbsp; firstSlice = url.substring(0, url.indexOf("#")) <br> 
+			&nbsp;secondSlice = url.substring(url.indexOf("#"), url.length) <br>
+			etc..
+			<br>
+			}
+			</p>
+			<p> For example. URL: https://www.google.com/search?key=value&second=hey#yo </p>			
+
+
+			<div class="keyVal_Row"> 
+			      	<input type="key" id="keyHash" placeholder="Key" value=""> 
+			      	<input type="value" id="valHash" placeholder="Value" value="">  
+			      	<button onclick="hashIt('https://www.google.com/search?key=valuesecond=hey#yo')"> Add new params</button>
+			</div>			
+			<br>
+			The new generated URL will show as a popup
+			
+		</section>
+	</div>
+
+
+	<script>
+
+	//Alternatively, to account for variable lenth inputs, create a global object and keep adding the key value parameters into the object. Then, parseURL() would iterate throught hat object and add on key value pairs from the object.
+
+	//This one is just hardcoding three key value pairs into a URL string
+
+	function populate(){
+		var paramkeys = Object.keys(this.params) 
+		for (var i = 0; i<paramkeys.length; i++){
+			document.getElementById("result").innerHTML += " " + paramkeys[i]
+		}
+	}
+
+	function parseURL(url, par){
+		var newKey = $('#keyIn').val()
+		var newVal = $('#valIn').val()
+
+		var newKey2 = $('#keyIn2').val()
+		var newVal2 = $('#valIn2').val()
+
+		var newKey3 = $('#keyIn3').val()
+		var newVal3 = $('#valIn3').val()
+
+	    if (url.indexOf("?") == -1){
+			url = url.concat("search?")
+	    }
+
+		url += newKey + "=" + newVal + "&"
+		url += newKey2 + "=" + newVal2 + "&"
+		url += newKey3 + "=" + newVal3	
+
+	    // //Start appending the params
+	    // for (x in this.params){ 
+	    //     url += String(x) + "=" + this.params[x] + "&";
+	    // }
+	    // Remove the last &
+	    if (url.lastIndexOf('&') == (url.length-1)){
+			url = url.substring(0, url.length-1)
+	    }
+
+		alert("The new url: " + url)
+	    var newElement = document.createElement('div');
+	    newElement.innerHTML = url
+	    document.getElementById('result').appendChild(newElement)
+	}
+
+
+	function hashIt(url, params){
+		var newKey = $('#keyHash').val()
+		var newVal = $('#valHash').val()
+
+		if (newKey == '' || newVal ==''){
+			alert("Fill in the values first!!!")
+		}
+
+		else if (url.indexOf('#') != -1){
+		 	firstSlice = url.substring(0, url.indexOf('#'))
+		 	secondSlice = url.substring(url.indexOf('#'), url.length)
+		 	url = firstSlice + '&' + newKey + '=' + newVal + secondSlice
+		 	alert("The new url is....")
+		 	alert(url)
+		}	
+	}
+
+	</script>
+
+
+
+
+	<!-- Search box questions -->
+
+
+	<h2 style="text-align:center; color: #116FAF;"> Q4) Recreate this search box picture</h2>
+
+
+	<div id="linkedContainer">
+		<header> <h2> Search <h2></header>
+		<section> 
+			<form>
+				<p>The interview asked for this and to call a GET request and fill the results with the response</p>
+				<p> I'll do a variation and just populate the results box (down below) with whatever input is submitted in the search box below.</p>
+
+				<input type="text" id="linkedin" name="inputbox" placeholder="Enter search here" value="">
+				<input type="button" name="button" value="Click to Add" onclick="fillForm(value)">
+			</form>
+
+			<p id="click" onclick="">Click here to see how I'd implement a GET request + more explanations below</p>
+			<!-- <h3 id="click" onclick="">Also here for description of everything</h3> -->
+	</div>
+
+	<div id="linkedContainer">
+		<header> <h3> Results <h3></header>
+		<section> 
+			<form>
+				<div id="result" style="text-align: center;">
+					<ul>
+						<p id="insert"> Go search for something up there </p>
+					</ul>
+				</div>
+			</form>
+		</section>
+	</div>
+
+	<div id="linkedContainer" style="overflow:scroll; margin-bottom: 20px;">
+		<header id="get"> <h3> How to get info from URL via GET request? <h3></header>
+		<section> 
+			<p> A GET request: Queries a URL string to get a response from a server. Like if you want a list of names from some API</p>
+			<p> A POST request: Submits data, like if you have a form you want to submit. For example, in computer security if you want to carry out a cross-site request forgery attack, all you do is embed a hidden html form with visibility: hidden property, fille up the values with your malicious code and have your victim click a button that submits a POST request with the data you've entered into the HTML forms.</p>
+			<p> $.get("search_url", <br>
+			&nbsp; {whatever:parameters}, <br>
+			&nbsp; success: function(data){ console.log("This is the callback function for GET request")
+			$(#result).innerHTML = data;
+			}) </p>
+
+			<p> Alternatively, i liked to use angular, which has the $http service which has the $http.get('/aURL') and has a callback to handle the response data</p>
+
+			<p> For css styling, I typically would go online, check out some good design websites and inspect element to figure out what looks best. (When you hover over the click me link up there, it changes to linked's blue logo color). </p>
+		</section>
+	</div>
+
+
+	<div id="linkedContainer">
+		<header> <h3> Write-up Explanations <h3></header>
+		<section> 
+			
+		</section>
+	</div>
+
+
+
+	<script type="text/javascript">
+		function populateStuff(){
+			var result = ""
+			for (var i = 0; i < this.object.length; i++){
+				result += "<li>" + this.object[i] + "</li>"
+			}
+			return result
+		}
+
+		function fillForm(value){
+		 	if ($('#linkedin').val() == ""){
+		 		document.getElementById("result").innerHTML = "<p> Theres nothing here! </p>"
+		 	}
+		 	else{
+		 		this.object.push($('#linkedin').val())
+		 		document.getElementById("result").innerHTML = "<p>" + populateStuff() + "</li>"	
+		 	}
+		 	$('#linkedin').val("")
+		}	
+		var object = []
+
+       $(document).ready(function (){
+            $("#click").click(function (){
+                //$(this).animate(function(){
+                    $('html, body').animate({
+                        scrollTop: $("#get").offset().top
+                    }, 500);
+                //});
+            });
+        });		
+
+	</script>	
+
+<br>
+
+</body>
+

@@ -8,6 +8,9 @@
           font-weight:bold;   
           
       }
+      a:hover{
+        font-size: 105%;
+      }
       .table-row{
           /*border-top: solid, 2px, black;*/
           height: 100px;
@@ -102,11 +105,16 @@
 
 
 <body>
+<!-- I'm using h1 here because it's the main title and not a modular subcomponent, as discussed on the onsite interview -->
+<h1 style="text-align:center;"> Q2) Recreate this dashboard picture</h1>
+<p style="text-align:center;"> <a href="https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg"> https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg </a> </p>
+
 
 <div class="Linked-Out-Container">
 
   <div class="Linkedin-List-Container">
 
+  <!-- For example, this here is h2 cuz its a header in a subcomponent.  -->
     <h2> <b> Recent Applicants</b></h2>
   
   <table>
@@ -120,7 +128,6 @@
          <div class="col-sm-7" id="info">
              
              <div id="name" href="link_to_port" > Toon Link </div>
-             
              <div id="description"> Hero of Time</div>
              <div id="position"> Hyrule | Athletics </div>
              <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
@@ -192,173 +199,11 @@
   </table>
 
 
-</body>
-<!--           <div class="col-sm-2" id="avatar">
-              <img src="file_location">
-          </div>
-         
-         <div class="col-sm-7" id="info">
-             #name
-             <div id="name"> <a href="link_to_port"{{ applicant.name}} </a></div>
-             <br>
-            
-             <div id="description"> {{ applicant.description}}</div>
-             <br>
-            
-             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
-             <br>
-            
-             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
-             <br>                     
-            
-             <div id="email">
-                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
-              
-             </div>
-             <br>          
-         
-         
-          </div>
-         <div class="col-sm-3" id="date">
-            {{applicant.submissionDate}}
-            {{applicant.isFeatured}} 
-         </div>    -->    
-     
-      <!-- </div> -->
-  
+</div>
+</div>
 
 
+<!--   <p style="text-align:center; padding-top: 25px;"> I can implement more actual functionalities with javascript if you'd like</p> -->
 
-<!--   <table>
-      #Rows for applicatnt
-      <div class="table-row" id="isActive">
-          <div class="col-sm-2" id="avatar">
-              <img src="file_location">
-          </div>
-         
-         <div class="col-sm-7" id="info">
-             #name
-             <div id="name"> <a href="link_to_port"{{ applicant.name}} </a></div>
-             <br>
-            
-             <div id="description"> {{ applicant.description}}</div>
-             <br>
-            
-             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
-             <br>
-            
-             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
-             <br>                     
-            
-             <div id="email">
-                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
-              
-             </div>
-             <br>          
-         
-         
-          </div>
-         <div class="col-sm-3" id="date">
-            {{applicant.submissionDate}}
-            {{applicant.isFeatured}} 
-         </div>       
-     
-      </div>
-     
-     
-     
-     
-     
-      #Second applicnt
-     
-      <div class="table-row">
-          <div class="col-sm-2" id="avatar">
-              <img src ="file_location" id="avatar_image">
-            
-          </div>
-         
-         <div class="col-sm-7" id="info">
-             #name
-             <div id="name"> {{ applicant.name}}</div>
-             <br>
-            
-             <div id="description"> {{ applicant.description}}</div>
-             <br>
-            
-             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
-             <br>
-            
-             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
-             <br>                     
-            
-             <div id="email">
-                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
-              
-             </div>
-             <br>          
-         
-         
-          </div>
-         <div class="col-sm-3" id="date">
-            {{applicant.submissionDate}}
-            {{applicant.isFeatured}} 
-         </div>       
-     
-      </div>
-     
-     
-     
-     
-     
-     
-     
-      #Third applicant
-     
-      <div class="table-row">
-          <div class="col-sm-2" id="avatar">
-              <img src="file_location">
-            
-          </div>
-         
-         <div class="col-sm-7" id="info">
-             #name
-             <div id="name"> {{ applicant.name}}</div>
-             <br>
-            
-             <div id="description"> {{ applicant.description}}</div>
-             <br>
-            
-             <div id="position"> {{applicant.comapny}} | {{ applicant.position}}</div>
-             <br>
-            
-             <div id="phone"> <div id="contact"> Phone </div>: {{             applicant.phone}}</div>
-             <br>                     
-            
-             <div id="email">
-                 <a href="link to send mail"> <div id="contact"> Email </div>: {{ applicant.email}}</a>          
-              
-             </div>
-             <br>          
-         
-         
-          </div>
-         <div class="col-sm-3" id="date">
-            {{applicant.submissionDate}}
-            {{applicant.isFeatured}} 
-         </div>       
-     
-      </div>
-     
-     
-     
-     
-         
-     
-
-  </table>
-
-
-
-  </div>
 </body>
 

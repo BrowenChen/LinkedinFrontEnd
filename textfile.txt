@@ -2,7 +2,6 @@
 <head>
 	<title> Search form question </title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	
 	<style>
 	  #LinkedIn_container {
 		height: 300px;
@@ -80,6 +79,7 @@
 		</section>
 	</div>
 
+
 	<div id="LinkedIn_container" style="overflow:scroll;">
 		<header id="get"> <h2> How to get info from URL via GET request? <h2></header>
 		<section> 
@@ -87,7 +87,7 @@
 			<p> A POST request: Submits data, like if you have a form you want to submit. For example, in computer security if you want to carry out a cross-site request forgery attack, all you do is embed a hidden html form with visibility: hidden property, fille up the values with your malicious code and have your victim click a button that submits a POST request with the data you've entered into the HTML forms.</p>
 			<p> $.get("search_url", <br>
 			{whatever:parameters}, <br>
-			success: function(data){ console.log("This is the callback function for GET request")
+			function(data){ console.log("This is the callback function for GET request")
 			$(#result).innerHTML = data;
 			}) </p>
 
@@ -97,15 +97,16 @@
 		</section>
 	</div>
 
+
 	<script type="text/javascript">
 		function populateStuff(){
+
 			var result = ""
 			for (var i = 0; i < this.object.length; i++){
 				result += "<li>" + this.object[i] + "</li>"
 			}
 			return result
 		}
-
 		function fillForm(value){
 		 	if ($('#linkedin').val() == ""){
 		 		document.getElementById("result").innerHTML = "<h3> Theres nothing here! </h3>"
