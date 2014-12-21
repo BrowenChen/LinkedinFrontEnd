@@ -1,14 +1,71 @@
 <!DOCTYPE>
 <head>
 
-  <title> questions </title>
+  <title> Linkedin Page Replica + extras </title>
   <script src="jquery-1.11.2.js"></script>
 
   <!-- Using bootstrap's grid layout for the dashboard -->
   <link rel="stylesheet" href="bootstrap.css">
   <script src="bootstrap.js"></script>  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
   
+
   <style>
+	.navbar{
+		/*background-color: #D7D7D7;*/
+		box-shadow: 0px 1px 2px black;
+		height: 40px;
+		border-radius: 0;
+		background: -webkit-linear-gradient(#606060, #414141); /* For Safari 5.1 to 6.0 */
+	}
+
+
+	.main_header{
+		border-bottom: 1px solid silver;
+		margin: 20px;
+	}
+
+	#search_button{
+		border: 1px solid #1A579D; 
+		background-color: #116FAF; 
+		border-radius: 5px;
+		height: 28px;
+		width: 50px;
+	}
+
+	#header_search{
+		border: 1px solid black;
+		height: 28px;
+		width: 270px;
+		border-radius: 3px;
+	}
+
+	#drop_img{
+		height: 28px;
+		position: relative; 
+		/*border:1px solid yellow; */
+		top: -1px; 
+		right: -3px;
+	}
+
+	#premium{
+		letter-spacing: 5px; 
+		color: #ecf0f1; 
+		text-transform:uppercase; 
+		font-family: 'Open Sans'
+		sans-serif;
+	}
+	#linkedin_logo{
+		position: relative;
+		height: 80%;
+		border-radius: 5px;
+		left: -10px;
+	}
+
+	.header_icons{
+		margin-left: 20px;
+	}
 
 	/*---------------------Question 2 css stuff---------------------*/  
       .h1{
@@ -185,7 +242,7 @@
 	  }		  
 
 	  #click:hover{
-		/*I used mac's digi color meter to read the  RGB values of linkedIn's logo blue ;)*/
+		/*linkedIn's logo blue ;)*/
 		color: #116FAF;
 		font-size: 120%;
 	  }
@@ -200,15 +257,264 @@
 </head>
 
 
-<body style="background-color: #E4E4E4;">
-<!-- I'm using h1 here because it's the main title and not a modular subcomponent, as discussed on the onsite interview -->
+<body style="background-image: url('txt_grain.png')">
 
-<h1 style="text-align:center; color: #116FAF"> [In]terview Questions </h1>
-<p style="text-align:center;"> Source code -  <a href=""> [written from scratch] </a></p>
+<div class="navbar"> 
 
-<h1 style="text-align:center;"> Q2) Recreate this dashboard picture</h1>
-<p style="text-align:center;"> <a href="https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg"> https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg </a> </p>
+	<div class='col-sm-3' style="height: 100%;"> 
+		<img id="linkedin_logo" src="linklogo.png" style="padding-top: 2px;"> <span id="premium"> premium </span>
+	</div>
 
+	<div class='col-sm-6' style="height: 100%; padding-top: 6px;"> 
+		<span> <img src="drop.png" id="drop_img"> </span><input id="header_search" placeholder="Search bar..." style="margin-left:0px;"> <button id="search_button">  <i class="fa fa-search" style="color: white;"></i> </button> <span style="color: silver; font-size: 80%;"> Advanced </span>
+	</div>
+	
+	<div class='col-sm-3' style="height: 100%;"> 
+
+		<a><img class="header_icons" src="mail.png" style="height: 55%;"></a>
+		<a><img class="header_icons" src="flag.png" style="height: 65%; margin-top: 7px;"> </a>
+		<a><img class="header_icons" src="prof_icon.png" style="height: 60%;"></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="main_header"> 
+	<h1 style="text-align:center; color: #116FAF"> [In]terview Questions </h1>
+</div>
+
+<!-- <div class="intro_text">
+	<p style="text-align:center; border: 1px solid yellow; width: 60%; margin:auto; margin-bottom: 15px;"> Test </p>
+</div> -->
+
+
+<style>
+#intro_container{
+	
+	/*border: 1px solid yellow;*/
+	height: 300px;
+}
+
+#intro_left{
+	/*background-color: silver;*/
+	margin: 0px;
+	padding: 5px;
+	/*border: 1px solid black;*/
+}
+
+#intro_left header{
+	background-color: #F5F5F5;
+	padding: 0px;
+	margin: 0px;
+	box-shadow: 0 1px 1px black;
+
+}
+
+#intro_left section{
+	background-color: white;
+	height: 200px;
+	padding: 0px;
+	margin: 0px;
+	box-shadow: 0 1px 1px black;
+	border-radius: 1px;
+	padding-top: 10px;
+}
+
+#intro_right{
+	/*border: 1px solid black;*/
+}
+
+#intro_right header{
+	/*border: 1px solid black;*/
+}
+
+#intro_right section{
+	background-color: white;
+	box-shadow: 0 1px 1px black;
+	height: 265px;
+	padding: 10px;
+	border-radius: 2px;
+}
+
+input[type='text']{
+	width: 300px;
+	height: 33px;
+
+}
+
+#newsList{
+	padding: 0px;
+	list-style: none;
+
+}
+
+#newsList img{
+	height: 37px;
+	width: 70px;
+}
+
+#newsList li{
+	padding-top: 5px;
+}
+
+#newsList p{
+	line-height: 10px;
+	color: grey	;
+	font-size: .8em;
+}
+
+</style>
+
+	<div id="intro_container" style="width: 80%; margin: auto;">
+		<div class="col-sm-7" id="intro_left"> 
+			<header id="intro_left_header">
+				<img src="prof_pic_2.png" style="height: 65px; width: 65px;"> 
+				<input type="text" placeholder="Recreating Linkedin pages." > 
+			</header>
+
+			<section>
+				<div class="col-sm-2" style="padding: 0px;"><img src="pulse.png" style="height: 62px; width: 62px;"> </div>
+				
+				<div class="col-sm-8">
+				
+					<div> <b style="color:#116FAF; ">Owen</b> recommends to view his <a href=""> [code]
+					</a>  
+					</div>
+
+					<ul id="newsList">
+						<li class="row" id="article1">
+
+							<div class="col-sm-3"> 
+								<img src="list1.png"> 
+							</div>
+							
+							<div class="col-sm-9">
+							
+								<b> How fear killed </b>
+								
+								<p>By something &middot; hasd</p>
+							
+							</div>
+						</li>
+
+
+						<li class="row" id="article2">
+							<div class="col-sm-3"> 
+								<img src="list2.png"> 
+							</div>
+							
+							<div class="col-sm-9">
+								<b> How fear killed </b>
+								<p> By something &middot; hi</p>
+							</div>
+						</li>
+
+						<li class="row" id="article3">
+							<div class="col-sm-3"> 
+								<img src="nasa.png"> 
+							</div>
+							
+							<div class="col-sm-9">
+								<b> Nasa </b>
+								<p> By someone else &middot; hey </p>
+							</div>
+						</li>
+
+						<li> 
+							<a href="http://www.github.com/browenchen" style="color:#116FAF;"> See his github <i class="fa fa-linkedin-square"></i></a>
+						</li>
+
+					</ul>
+
+				<div> 
+			</section>
+
+		</div>
+		
+
+		<style>
+		#person-description {
+			padding: 0px;
+			line-height: 15px;
+			margin-top: 10px;
+
+		}
+		#code1 img{
+			width: 40px;
+			height: 40px;
+			margin-top: 10px;
+		}
+
+		#person-description b{
+			color: #116FAF;
+		}
+
+		.fa-times{
+			color:silver;
+			float: right; 
+			margin-right: 20px; 
+		}
+
+		</style>
+		<div class="col-sm-5" id="intro_right" style="top:5px;"> 
+			<section> 
+			<h5 style="padding-bottom: 5px;border-bottom: 1px solid #ecf0f1">Recent Interview Questions</h5>
+			
+			<div class="row" id="code1"> 
+
+				<div class="col-sm-3">
+					<img src="anon.png">
+				</div>
+
+				<div id="person-description" class="col-sm-9">
+					<b> Legend of Zelda </b> <span><i class="fa fa-times"></i></span>
+					<p> Recreate this picture </p>
+
+				</div>
+				
+
+			</div>
+			
+			<div class="row" id="code1"> 
+				<div class="col-sm-3">
+					<img src="anon.png">
+				</div>
+
+				<div id="person-description" class="col-sm-9">
+					<b> Fix the URL </b> <span><i class="fa fa-times"></i></span>
+					<p> Write some JS </p>	
+				</div>
+			</div>
+			
+
+			<div class="row" id="code1"> 
+				<div class="col-sm-3">
+					<img src="anon.png">
+				</div>
+
+				<div id="person-description" class="col-sm-9">
+					<b> Search box </b> <span><i class="fa fa-times"></i></span>
+					<p> With JQuery GET request </p>	
+				</div>
+			</div>
+			
+			<p style="text-align:right; margin-top: 20px; color: #116FAF; border-bottom: 1px solid #ecf0f1;"> Want to ask more? <i class="fa fa-angle-double-right"></i>
+</p>
+			</section>
+		</div>
+
+		 
+	</div>
+
+	<div style="clear:both; padding-top: 20px;">
+		<h2 style="text-align:center;"> Q2) Recreate this dashboard picture</h2>
+		<p style="text-align:center;"> <a href="https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg"> https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg </a> </p>
+	</div>
 
 <div class="Linked-Out-Container">
 
@@ -308,7 +614,7 @@
 
 <br>
 <!-- Question three here -->
-<h1 style="text-align:center;"> Q3) Write a URL parser in JS</h1>
+<h2 style="text-align:center;"> Q3) Write a URL parser in JS</h2>
 	<div id="linkedContainer">
 		<header> 
 		Q3) URL parsing Javascript function 
@@ -458,7 +764,7 @@
 	<!-- Search box questions -->
 
 
-	<h1 style="text-align:center;"> Q4) Recreate this search box picture</h1>
+	<h2 style="text-align:center;"> Q4) Recreate this search box picture</h2>
 
 
 	<div id="linkedContainer">
@@ -508,7 +814,7 @@
 
 
 	<div id="linkedContainer">
-		<header> <h3> Trivia questions <h3></header>
+		<header> <h3> Write-up Explanations <h3></header>
 		<section> 
 			
 		</section>
@@ -550,13 +856,7 @@
 	</script>	
 
 
-<h1 style="text-align:center; color: #116FAF"> A bit more [in]side my life.. </h1>
-
-
-<br>
-
-<h1 style="text-align:center; color: #116FAF"> F[in]ally, why this team specifically. </h1>
-
+<!-- <p> "The best webdev people are a combination of both theory and industry skills, and I think that's the kind of path we are on, and Linkedin knows that." - Alex Triana to me when I was question my decision to do this last bit. </p> -->
 <br>
 
 </body>
