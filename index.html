@@ -496,6 +496,10 @@ input[type='text']{
 					/*box-shadow: 0 1px 1px black;*/
 				}
 
+				.second_section footer:hover{
+					background: #EDF0F3;
+					color: #116FAF;
+				}
 				.body_left{
 					position: absolute;
 					left: 0px;
@@ -725,11 +729,48 @@ asdasdasds -->
 	</div>
 
 
+	<style>
+	.view-more{
+		clear:both;
+		position: relative;
+		padding-top: 20px; 
+		height: 100px;
+		width: 70%;
+		margin: auto;
+		margin-bottom: 10px;
+		/*border: 1px solid green;*/
 
-	<div style="clear:both; padding-top: 20px; visibility: hidden;">
-		<h2 style="text-align:center; color: #116FAF;"> Q2) Recreate this dashboard picture</h2>
-		<p style="text-align:center;"> <a href="https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg"> https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg </a> </p>
+	}
+
+	#view-button{
+		
+		height: 60%;
+		background: #EAEAEA;
+		text-align: center;
+		color: grey;
+		border: 1px solid silver;
+
+	}
+
+	#view-button:hover{
+		background: #EDF0F3;
+		color: #116FAF;
+	}
+
+	.fa-chevron-down{
+		padding: 5px;
+	}
+
+
+	</style>
+	
+	<div class="view-more">
+
+		<div id="view-button">
+			<h4> <span><i class="fa fa-chevron-down"></i> </span> View Questions <span><i class="fa fa-chevron-down"></i> </span></h4>
+		</div>
 	</div>
+
 
 	<style>
 		.question-container{
@@ -964,7 +1005,7 @@ asdasdasds -->
 		<h4> URL Parsing Javascript </h4>
 	</header>
 	<section> 
-	
+			<p> Given a url, write a function to append additional key value parameters to a valid search query </p>
 			<p> Given URL:
 			https://www.google.com/
 			<form> 
