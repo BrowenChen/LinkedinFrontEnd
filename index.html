@@ -15,6 +15,8 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
   <style>
+
+
 	.navbar{
 		/*background-color: #D7D7D7;*/
 		box-shadow: 0px 1px 2px black;
@@ -22,7 +24,6 @@
 		border-radius: 0;
 		background: -webkit-linear-gradient(#606060, #414141); /* For Safari 5.1 to 6.0 */
 	}
-
 
 	.main_header{
 		border-bottom: 1px solid silver;
@@ -198,10 +199,7 @@
 	}
 	/*---------------------Question 3 css stuff---------------------*/
 
-
 	/*---------------------Question 4 css stuff---------------------*/
-
-
 	  #LinkedIn_container {
 		height: 300px;
 	    width: 500px;
@@ -243,7 +241,6 @@
 	   	color: #888;
 	   	font-weight: normal;
 	  }		  
-
 	  #click:hover{
 		/*linkedIn's logo blue ;)*/
 		color: #116FAF;
@@ -729,118 +726,245 @@ asdasdasds -->
 
 
 
-	<div style="clear:both; padding-top: 20px;">
+	<div style="clear:both; padding-top: 20px; visibility: hidden;">
 		<h2 style="text-align:center; color: #116FAF;"> Q2) Recreate this dashboard picture</h2>
 		<p style="text-align:center;"> <a href="https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg"> https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg </a> </p>
 	</div>
 
-<div class="Linked-Out-Container">
-
-  <div class="Linkedin-List-Container">
-
-  <!-- For example, this here is h2 cuz its a header in a subcomponent.  -->
-    <h2> <b> Recent Applicants</b></h2>
-  
-  <table>
-      <!-- #Rows for applicatnt -->
-      <div class="table-row" id="isActive">
-      
-        <div class="col-sm-2" id="avatar">
-            <img id="avatar-image" src="link.png">
-        </div>
-
-         <div class="col-sm-7" id="info">
-             
-             <div id="name" href="link_to_port" > Toon Link </div>
-             <div id="description"> Hero of Time</div>
-             <div id="position"> Hyrule | Athletics </div>
-             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
-             <div id="email">
-                 <a href="link to send mail"> <span id="contact"> Email </span>: link@triforce.com</a>          
-             </div>
-                 
-        </div>
-
-         <div class="col-sm-3" id="date">
-            Aug. 4th, 2011
-            Featured Applicant
-         </div>    
-      </div>
+	<style>
+		.question-container{
+			position: relative;
+			width: 70%;
+			height: 700px;
+			background-color: white;
+			box-shadow: 0 2px 1px black;
+			margin: auto;
+			margin-bottom: 30px;
 
 
+		}
 
-      <div class="table-row">
-      
-        <div class="col-sm-2" id="avatar">
-            <img id="avatar-image" src="zeld.png">
-        </div>
-
-         <div class="col-sm-7" id="info">
-             
-             <div id="name" href="link_to_port" > Princess Zelda</div>
-             
-             <div id="description"> High Ruler of Hyrule</div>
-             <div id="position"> Hyrule | Government </div>
-             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
-             <div id="email">
-                 <a href="link to send mail"> <span id="contact"> Email </span>: zelda@triforce.com</a>          
-             </div>
-                 
-        </div>
-
-         <div class="col-sm-3" id="date">
-            Aug. 2nd, 2011
-         </div>    
-      </div>
+		.question-container header{
+			position: absolute;
+			color: silver;
+			padding: 10px;
+			height: 20%;
+			width: 100%;
+			background-color: #EAEAEA;
+			border-bottom: 1px solid silver;
+			top: 0;
+		    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+		    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+		    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+		    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );				
+		                                                               	}
 
 
-
-      <div class="table-row" style="border-bottom: 1px solid silver;">
-      
-        <div class="col-sm-2" id="avatar">
-            <img id="avatar-image" src="stand.png">
-        </div>
-
-         <div class="col-sm-7" id="info">
-             
-             <div id="name" href="link_to_port" > Dark Lord Ganondorf</div>
-             
-             <div id="description"> Taking over the world, one kingdom at a time</div>
-             <div id="position"> Dark Realm | Other </div>
-             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
-             <div id="email">
-                 <a href="link to send mail"> <span id="contact"> Email </span>: ganon@darkrealm.com</a>          
-             </div>
-                 
-        </div>
-
-         <div class="col-sm-3" id="date">
-            Aug. 2nd, 2011
-         </div>    
-      </div>      
+		.question-container section{
+			position: absolute;
+			padding: 10px;
+			height: 80%;
+			width:100%;
+			bottom: 0;
+		}
 
 
-  </table>
+		.question-container footer{
+		 	border: 1px solid green;
+		}		
 
 
-</div>
-</div>
+	</style>
+
+	<div class="question-container">
+		<header>
+			<h2> 
+		<h2 style="text-align:center; color: #116FAF;"> Q2) Recreate this dashboard picture</h2>
+		<p style="text-align:center;"> <a href="https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg"> https://linkedin.app.box.com/s/y1gj31rgaaivgan6buwg </a> </p>
+			</h2>
+		</header>
+		<section>
+			
+			<div class="Linked-Out-Container">
+
+			  <div class="Linkedin-List-Container">
+
+			  <!-- For example, this here is h2 cuz its a header in a subcomponent.  -->
+			    <h2> <b> Recent Applicants</b></h2>
+			  
+			  <table>
+			      <!-- #Rows for applicatnt -->
+			      <div class="table-row" id="isActive">
+			      
+			        <div class="col-sm-2" id="avatar">
+			            <img id="avatar-image" src="link.png">
+			        </div>
+
+			         <div class="col-sm-7" id="info">
+			             
+			             <div id="name" href="link_to_port" > Toon Link </div>
+			             <div id="description"> Hero of Time</div>
+			             <div id="position"> Hyrule | Athletics </div>
+			             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+			             <div id="email">
+			                 <a href="link to send mail"> <span id="contact"> Email </span>: link@triforce.com</a>          
+			             </div>
+			                 
+			        </div>
+
+			         <div class="col-sm-3" id="date">
+			            Aug. 4th, 2011
+			            Featured Applicant
+			         </div>    
+			      </div>
+
+
+
+			      <div class="table-row">
+			      
+			        <div class="col-sm-2" id="avatar">
+			            <img id="avatar-image" src="zeld.png">
+			        </div>
+
+			         <div class="col-sm-7" id="info">
+			             
+			             <div id="name" href="link_to_port" > Princess Zelda</div>
+			             
+			             <div id="description"> High Ruler of Hyrule</div>
+			             <div id="position"> Hyrule | Government </div>
+			             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+			             <div id="email">
+			                 <a href="link to send mail"> <span id="contact"> Email </span>: zelda@triforce.com</a>          
+			             </div>
+			                 
+			        </div>
+
+			         <div class="col-sm-3" id="date">
+			            Aug. 2nd, 2011
+			         </div>    
+			      </div>
+
+
+
+			      <div class="table-row" style="border-bottom: 1px solid silver;">
+			      
+			        <div class="col-sm-2" id="avatar">
+			            <img id="avatar-image" src="stand.png">
+			        </div>
+
+			         <div class="col-sm-7" id="info">
+			             
+			             <div id="name" href="link_to_port" > Dark Lord Ganondorf</div>
+			             <div id="description"> Taking over the world, one kingdom at a time</div>
+			             
+			             <div id="position"> Dark Realm | Other </div>
+			             <div id="phone"> <span id="contact"> Phone </span>: 555-555-5555</div>                    
+			             
+			             <div id="email">
+			                 <a href="link to send mail"> <span id="contact"> Email </span>: ganon@darkrealm.com</a>          
+			             </div>
+			                 
+			        </div>
+
+			         <div class="col-sm-3" id="date">
+			            Aug. 2nd, 2011
+			         </div>    
+			      </div>      
+
+
+			  </table>
+
+
+			</div>
+			</div>
+		</section>
+
+	</div>
+
 
 <!--   <p style="text-align:center; padding-top: 25px;"> I can implement more actual functionalities with javascript if you'd like</p> -->
 
+<style>
+.col-1{
+	position: relative;
+	display: inline-block;
+	width: 48%;
+	margin: auto;
+	float: left;
+	/*border: 1px solid green;*/
+
+}
+
+.col-2{
+	position: relative;
+	display: inline-block;
+	width: 48%;
+	float: right;
+	/*border: 1px solid green;*/
+
+}
 
 
-<br>
-<!-- Question three here -->
+.jsContainer{
+	position: relative;
+	/*border: 1px solid green;*/
+	height: 80%;
+	width: 90%;
+	
+	margin: auto;
+	margin-top: 25px;
+	vertical-align: center;
+	border: 1px solid silver;
+	box-shadow: 0 1px 5px grey;
+	background-color: white;
+}
+
+.jsContainer header{
+	position: relative;
+	top: 0;
+	height: 15%;
+	width: 100%;
+	margin: 0;
+	color: black;
+
+}
+
+.jsContainer footer{
+	position: absolute;
+	bottom: 0;
+	width: 100px;
+	height: 15%;
+
+
+}
+
+.jsContainer section{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 85%;
+
+}
+
+</style>
+
+
+<div class="question-container">
+<header>
+			<h2> 
 <h2 style="text-align:center; color: #116FAF;"> Q3) Write a URL parser in JS</h2>
-	<div id="linkedContainer">
-		<header> 
-		Q3) URL parsing Javascript function 
-		</header>
-		<!-- <input value="https://www.google.com/" style="visibility: hidden;">  -->
-		<section>
-			
-			<p> Enter in three key value parameters to append to a valid URL string for a search query.
+			</h2>
+
+</header>
+<section>
+	
+<div class="col-1">
+	<div class="jsContainer">
+	<header>
+		<h4> URL Parsing Javascript </h4>
+	</header>
+	<section> 
+	
 			<p> Given URL:
 			https://www.google.com/
 			<form> 
@@ -866,19 +990,225 @@ asdasdasds -->
 				<button onclick='parseURL("https://www.google.com/", "list")' style="margin-top: 10px;" > Generate URL</button>
 			</form>
 
-    			
-    			<p> The generated URL string will show as a popup </p>
-<!--			<p> Result:
-    				<div id="result">
-    				</div>
-    			</p>  -->
+			<p> The generated URL string will show as a popup </p>
+			
+			
 
-		</section>
+	</section>
+
 
 	</div>
+
+</div>
+
+
+
+<div class="col-2">
 	
-	<div id="linkedContainer" style="margin-bottom: 25px;">
-		<header> Q3.b) How to account for hashtags? </header>
+	<div class="jsContainer">
+		<header>
+			<h4> HashTag Parsing </h4>
+		</header>
+
+		<section style="overflow: scroll;">
+					<p> Do a (if url.indexOf("#") != -1) then slice the substring, add in the parameters into the first slice, then append on the second substring that includes the hash + everything after it</p>
+
+					<p> 
+					if (if url.indexOf("#") != -1){ <br>
+					&nbsp; firstSlice = url.substring(0, url.indexOf("#")) <br> 
+					&nbsp;secondSlice = url.substring(url.indexOf("#"), url.length) <br>
+					etc..
+					<br>
+					}
+					</p>
+					<p> For example. URL: https://www.google.com/search?key=value&second=hey#yo </p>			
+
+
+					<div class="keyVal_Row"> 
+					      	<input type="key" id="keyHash" placeholder="Key" value=""> 
+					      	<input type="value" id="valHash" placeholder="Value" value="">  
+					      	<button onclick="hashIt('https://www.google.com/search?key=valuesecond=hey#yo')"> Add new params</button>
+					</div>			
+					<br>
+					The new generated URL will show as a popup
+
+		</section>		
+	</div>
+ 
+
+</div>
+
+
+
+
+</section>
+</div>
+
+
+
+<br>
+
+<style>
+
+	#searchContainer{
+		position: relative;
+		height: 400px;
+		width: 600px;
+		margin: auto;
+		margin-top: 25px;
+		vertical-align: center;
+		padding: 0px;
+		border: 1px solid silver;
+		box-shadow: 0 1px 5px grey;
+		background-color: white;
+		overflow: scroll;
+
+	}
+
+	#searchContainer header{
+		font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+		position: absolute;
+		width: 100%;
+		height: 20%;
+		top: 0;
+		padding: 10px 30px;
+		font-weight: bold;
+	    box-shadow: 0 1px 2px grey;
+	    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+	    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );		
+	}
+	#searchContainer section{
+		padding: 30px;
+		height: 80%;
+		width: 100%;
+		bottom: 0;
+
+	}
+	#searchContainer footer{
+		bottom: 0;
+		height: 10%;
+		width:100%;
+		z-index: 1;
+	}
+</style>
+
+<div class="question-container">
+	<header>
+	<h2 style="text-align:center; color: #116FAF;"> Q4) Recreate this search box picture</h2>
+	</header>
+
+	<section>
+
+
+		<div id="searchContainer">
+			<header> <h2 style="color: black;"> Search <h2></header>
+			<section> 
+				<form>
+					<p>The interview asked for this and to call a GET request and fill the results with the response</p>
+					<p> I'll do a variation and just populate the results box (down below) with whatever input is submitted in the search box below.</p>
+
+					<input type="text" id="linkedin" name="inputbox" placeholder="Enter search here" value="">
+					<input type="button" name="button" value="Click to Add" onclick="fillForm(value)">
+				</form>
+
+				<form>
+				       	<div id="result" style="text-align: center;">
+				       		<ul>
+				       			<p id="insert"> Go search for something up there </p>
+				       		</ul>
+				       	</div>
+				</form>			
+
+
+				<!-- <h3 id="click" onclick="">Also here for description of everything</h3> -->
+
+				<p id="click" onclick="" style="text-align:center;">Click here to see how I'd implement a GET request + more explanations below</p>	
+		</div>
+	</section>
+</div>
+
+<div class="question-container">
+<header>
+	<h2 style="text-align:center; color: #116FAF;">Q4.2) GET Request via Ajax </h2>
+</header>
+
+<section>
+
+	<div id="searchContainer">
+	<header> <h2 style="color: black;"> Descriptions <h2></header>
+
+	<section>
+
+			<p> A GET request: Queries a URL string to get a response from a server. Like if you want a list of names from some API</p>
+			<p> A POST request: Submits data, like if you have a form you want to submit. For example, in computer security if you want to carry out a cross-site request forgery attack, all you do is embed a hidden html form with visibility: hidden property, fille up the values with your malicious code and have your victim click a button that submits a POST request with the data you've entered into the HTML forms.</p>
+			<p> $.get("search_url", <br>
+			&nbsp; {whatever:parameters}, <br>
+			&nbsp; success: function(data){ console.log("This is the callback function for GET request")
+			$(#result).innerHTML = data;
+			}) </p>
+
+			<p> Alternatively, i liked to use angular, which has the $http service which has the $http.get('/aURL') and has a callback to handle the response data</p>
+
+			<p> For css styling, I typically would go online, check out some good design websites and inspect element to figure out what looks best. (When you hover over the click me link up there, it changes to linked's blue logo color). </p>
+
+	</section>
+	</div>
+	
+
+</section>
+
+</div>
+
+
+
+
+<!-- Question three here -->
+<!-- <h2 style="text-align:center; color: #116FAF;"> Q3) Write a URL parser in JS</h2> -->
+    	<!-- <div id="linkedContainer"> -->
+    		<!-- <header>  -->
+    		<!-- Q3) URL parsing Javascript function  -->
+    		<!-- </header> -->
+    		<!-- <input value="https://www.google.com/" style="visibility: hidden;">  -->
+    		<!-- <section> -->
+    			
+<!--			<p> Enter in three key value parameters to append to a valid URL string for a search query.
+    			<p> Given URL:
+    			https://www.google.com/
+    			<form> 
+ -->				<!-- First key value pair -->
+<!--				<div class="keyVal_Row"> 
+    					<input type="key" id="keyIn" placeholder="Key" value=""> 
+    					<input type="value" id="valIn" placeholder="Value" value="">  
+    				</div>
+ -->				
+    				<!-- Second key value pair -->
+<!--				<div class="keyVal_Row"> 
+    					<input type="key" id="keyIn2" placeholder="Key" value=""> 
+    					<input type="value" id="valIn2" placeholder="Value" value="">  
+    				</div>
+ -->
+    				<!-- Third key value pair -->
+<!--				<div class="keyVal_Row"> 
+    					<input type="key" id="keyIn3" placeholder="Key" value=""> 
+    					<input type="value" id="valIn3" placeholder="Value" value="">  
+    				</div>
+    				
+    				<br>
+    				<button onclick='parseURL("https://www.google.com/", "list")' style="margin-top: 10px;" > Generate URL</button>
+    			</form>
+
+			
+			<p> The generated URL string will show as a popup </p>
+
+
+		</section> -->
+
+<!--	</div>
+    	
+    	<div id="linkedContainer" style="margin-bottom: 25px;">
+    		<header> Q3.b) How to account for hashtags? </header>
 
 		<section> 
 			<p> Do a (if url.indexOf("#") != -1) then slice the substring, add in the parameters into the first slice, then append on the second substring that includes the hash + everything after it</p>
@@ -903,7 +1233,7 @@ asdasdasds -->
 			The new generated URL will show as a popup
 			
 		</section>
-	</div>
+	</div> -->
 
 
 	<script>
@@ -977,7 +1307,7 @@ asdasdasds -->
 
 	<!-- Search box questions -->
 
-
+<!-- 
 	<h2 style="text-align:center; color: #116FAF;"> Q4) Recreate this search box picture</h2>
 
 
@@ -992,9 +1322,9 @@ asdasdasds -->
 				<input type="button" name="button" value="Click to Add" onclick="fillForm(value)">
 			</form>
 
-			<p id="click" onclick="">Click here to see how I'd implement a GET request + more explanations below</p>
-			<!-- <h3 id="click" onclick="">Also here for description of everything</h3> -->
-	</div>
+    			<p id="click" onclick="">Click here to see how I'd implement a GET request + more explanations below</p> -->
+    			<!-- <h3 id="click" onclick="">Also here for description of everything</h3> -->
+<!--	</div>
 
 	<div id="linkedContainer">
 		<header> <h3> Results <h3></header>
@@ -1007,18 +1337,18 @@ asdasdasds -->
 				</div>
 			</form>
 		</section>
-	</div>
+	</div> -->
 
-	<div id="linkedContainer" style="overflow:scroll; margin-bottom: 20px;">
-		<header id="get"> <h3> How to get info from URL via GET request? <h3></header>
-		<section> 
-			<p> A GET request: Queries a URL string to get a response from a server. Like if you want a list of names from some API</p>
-			<p> A POST request: Submits data, like if you have a form you want to submit. For example, in computer security if you want to carry out a cross-site request forgery attack, all you do is embed a hidden html form with visibility: hidden property, fille up the values with your malicious code and have your victim click a button that submits a POST request with the data you've entered into the HTML forms.</p>
-			<p> $.get("search_url", <br>
-			&nbsp; {whatever:parameters}, <br>
-			&nbsp; success: function(data){ console.log("This is the callback function for GET request")
-			$(#result).innerHTML = data;
-			}) </p>
+<!--	<div id="linkedContainer" style="overflow:scroll; margin-bottom: 20px;">
+    		<header id="get"> <h3> How to get info from URL via GET request? <h3></header>
+    		<section> 
+    			<p> A GET request: Queries a URL string to get a response from a server. Like if you want a list of names from some API</p>
+    			<p> A POST request: Submits data, like if you have a form you want to submit. For example, in computer security if you want to carry out a cross-site request forgery attack, all you do is embed a hidden html form with visibility: hidden property, fille up the values with your malicious code and have your victim click a button that submits a POST request with the data you've entered into the HTML forms.</p>
+    			<p> $.get("search_url", <br>
+    			&nbsp; {whatever:parameters}, <br>
+    			&nbsp; success: function(data){ console.log("This is the callback function for GET request")
+    			$(#result).innerHTML = data;
+    			}) </p>
 
 			<p> Alternatively, i liked to use angular, which has the $http service which has the $http.get('/aURL') and has a callback to handle the response data</p>
 
@@ -1034,7 +1364,7 @@ asdasdasds -->
 		</section>
 	</div>
 
-
+ -->
 
 	<script type="text/javascript">
 		function populateStuff(){
